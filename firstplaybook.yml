@@ -17,7 +17,7 @@
        artifact_id: hello-world-maven
        extension: war
    #   version: 1.0-SNAPSHOT
-       repository_url: "http://18.181.205.133:8081/happycoding-snapshot-repository/"
+       repository_url: 'http://18.181.205.133:8081/happycoding-snapshot-repository/'
        username: admin
        password: admin123
        dest: "/tmp/hello-world-maven.war"
