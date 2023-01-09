@@ -2,7 +2,7 @@
   hosts: deploy_server
   connection: local
   become: yes
-  become_user: root
+  become_user: ec2-user
   tasks:
     - name: remove war file from temp folder
       shell: rm -rf /tmp/hello-world-maven.war
