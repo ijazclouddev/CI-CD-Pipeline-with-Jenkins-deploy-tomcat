@@ -1,5 +1,6 @@
-[deploy_server]
-18.183.94.213 ansible_user=ec2-user
-18.183.94.213 ansible_ssh_pass=passw0rd ansible_ssh_user=root
-18.183.94.213 ansible_python_interpreter="/usr/bin/python3"
+#[deploy_server]
+#18.183.94.213 ansible_user=ec2-user
+#18.183.94.213 ansible_python_interpreter="/usr/bin/python3"
+localhost ansible_connections=local
+
 
