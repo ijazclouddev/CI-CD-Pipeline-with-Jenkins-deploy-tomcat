@@ -4,6 +4,10 @@
   become: true
   become_user: root
   tasks:
+  
+    - name: Install lxml
+      pip: name=lxml
+      
     - name: remove war file from temp folder
       shell: rm -rf /tmp/hello-world-maven.war
   
