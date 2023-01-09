@@ -9,15 +9,15 @@
   
     - name: "Download war file from Nexus"
       maven_artifact:
-      group_id: io.happycoding
-      artifact_id: hello-world-maven
-      extension: war
-      version: latest
-      repository_url: "http://18.181.205.133:8081/repository/happycoding-snapshot-repository/"
-      username: admin
-      password: admin123
-      dest: "/tmp/hello-world-maven.war"
-      mode: '0644'
+       group_id: io.happycoding
+       artifact_id: hello-world-maven
+       extension: war
+       version: latest
+       repository_url: "http://18.181.205.133:8081/repository/happycoding-snapshot-repository/"
+       username: admin
+       password: admin123
+       dest: "/tmp/hello-world-maven.war"
+       mode: '0644'
 
     - name: Execute the command in remote shell; stdout goes to the specified file on the remote
       ansible.builtin.shell: amazon-linux-extras install java-openjdk11 -y
