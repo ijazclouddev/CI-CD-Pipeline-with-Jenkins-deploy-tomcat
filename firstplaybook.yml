@@ -1,7 +1,7 @@
 - name: Downloading war file from Nexus and also installing tomcat and deploy the war file.
   hosts: localhost
   connection: local
-  become: yes
+  become: true
   become_user: root
   tasks:
     - name: remove war file from temp folder
