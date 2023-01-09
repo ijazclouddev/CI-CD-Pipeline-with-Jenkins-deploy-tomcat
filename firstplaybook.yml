@@ -1,5 +1,5 @@
 - name: Downloading war file from Nexus and also installing tomcat and deploy the war file.
-  hosts: deploy_serverr
+  hosts: deploy_server
   connection: local
   become: yes
   become_user: ec2-user
