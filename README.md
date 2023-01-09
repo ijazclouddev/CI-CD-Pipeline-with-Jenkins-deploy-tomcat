@@ -1,6 +1,4 @@
-# CI-CD-Pipeline-with-Jenkins-deploy-tomcat
-
-This project contains a sample example webapp that uses Maven to package a web app and deply in tomcat.
+This project contains a barebones example webapp that uses Maven to package a web app.
 
 This project is laid out like this:
 
@@ -16,3 +14,6 @@ You can compile this into a directory and a `.war` file by executing this comman
 
 ```
 mvn package
+```
+
+Learn more at [HappyCoding.io/tutorials/java-server](https://happycoding.io/tutorials/java-server).
