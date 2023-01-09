@@ -2,5 +2,6 @@
 #18.183.94.213 ansible_user=ec2-user
 #18.183.94.213 ansible_python_interpreter="/usr/bin/python3"
 localhost ansible_connections=local
+54.249.187.236 ansible_python_interpreter="/usr/bin/python3"
 
 
