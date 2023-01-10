@@ -39,7 +39,7 @@
 
     - name: Copy the war file
       copy:
-       src: /tmp/demo.war
+       src: /tmp/hello-world-maven.war
        dest: /usr/local/apache-tomcat-10.0.27/webapps/
        remote_src: yes
 
