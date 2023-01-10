@@ -42,6 +42,12 @@
        src: /tmp/hello-world-maven.war
        dest: /usr/local/apache-tomcat-10.0.27/webapps/
        remote_src: yes
+       
+    - name: changing tomcat port number
+      template:
+       src: /var/lib/jenkins/workspace/TestJob/server.xml.j2
+       dest: /usr/local/apache-tomcat-10.0.27/conf/server.xml
+       mode: '0777'   
 
     - name: Stop tomcat services
       shell: /usr/local/apache-tomcat-10.0.27/bin/shutdown.sh
