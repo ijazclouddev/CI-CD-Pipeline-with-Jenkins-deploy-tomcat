@@ -45,7 +45,7 @@
        
     - name: changing tomcat port number
       template:
-       src: /var/lib/jenkins/workspace/TestJob/server.xml.jinja2
+       src: /var/lib/jenkins/workspace/FirstPipeline/server.xml.jinja2
        dest: /usr/local/apache-tomcat-10.0.27/conf/server.xml
        mode: '0777'   
 
