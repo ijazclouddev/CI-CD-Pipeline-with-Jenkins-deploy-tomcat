@@ -12,6 +12,11 @@
       
     - name: remove war file from temp folder
       shell: rm -rf /tmp/hello-world-maven.war
+      
+    - name: Copy the secrets file
+      copy:
+       src: secrets.yml
+       dest: /home/ec2-user/
   
     - name: "Download war file from Nexus"
       maven_artifact:
