@@ -16,7 +16,7 @@
        group_id: io.happycoding
        artifact_id: hello-world-maven
        extension: war
-       version: '{{mavenPom.version}}' 
+       version: '{{ version }}' 
        repository_url: "http://18.181.205.133:8081/repository/maven-test-repo/"
        username: admin
        password: admin123
