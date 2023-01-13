@@ -1,0 +1,10 @@
+name: Deploying war into Apache Tomcat
+hosts: localhost
+connection: local
+become: true
+become_user: root
+  
+tasks:
+    - name: Deploy java war into Apache tomcat server
+      import_role:
+        name: ansible_tomcat_roles
