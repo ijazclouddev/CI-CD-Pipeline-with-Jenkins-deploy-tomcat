@@ -3,6 +3,8 @@
   connection: local
   become: true
   become_user: root
+  vars_files:
+    - secrets.yml
   tasks:
   
     - name: Install lxml
@@ -18,8 +20,10 @@
        extension: war
        version: '{{ version }}' 
        repository_url: "http://18.181.205.133:8081/repository/maven-test-repo/"
-       username: admin
-       password: admin123
+     # username: admin
+     # password: admin123
+       username: '{{ username }}'
+       password: '{{ password }}'
        dest: "/tmp/hello-world-maven.war"
        mode: '0644'
 
