@@ -5,6 +5,11 @@
   become_user: root
 #  vars_files:
 #    - secrets.yml
+
+  tasks:
+    - name: Deploy java war into Apache tomcat server
+      import_role:
+        name: ansible_tomcat_roles
   tasks:
   
     - name: Install lxml
