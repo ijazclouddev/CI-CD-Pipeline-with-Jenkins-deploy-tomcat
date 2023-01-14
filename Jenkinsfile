@@ -49,6 +49,7 @@ stage('Execute Ansible Playbook') {
                def mavenPom = readMavenPom file: 'pom.xml'
                def version = "${mavenPom.version}"  
                echo "${version}"
+               sh 'ls -ltrh'
                sh "ansible-playbook --vault-password-file=/var/lib/jenkins/workspace/.vault_pass -i inventory roleplaybook.yml -e version='${version}'"
             }
             }
