@@ -1,14 +1,14 @@
-- name: Downloading war file from Nexus and also installing tomcat and deploy the war file.
-  hosts: localhost
-  connection: local
-  become: true
-  become_user: root
-
-  tasks:
-    - name: Deploy java war into Apache tomcat server
-      import_role:
-        name: ansible_tomcat_roles
-  tasks:
+#- name: Downloading war file from Nexus and also installing tomcat and deploy the war file.
+#  hosts: localhost
+#  connection: local
+#  become: true
+#  become_user: root
+#
+#  tasks:
+#    - name: Deploy java war into Apache tomcat server
+#      import_role:
+#        name: ansible_tomcat_roles
+#  tasks:
   
     - name: Install lxml
       pip: name=lxml
@@ -25,8 +25,8 @@
        repository_url: "http://18.181.205.133:8081/repository/maven-test-repo/"
        username: admin
        password: admin123
-     #  username: '{{ username }}'
-     #  password: '{{ password }}'
+       username: "{{ username }}"
+       password: "{{ password }}"
        dest: "/tmp/hello-world-maven.war"
        mode: '0644'
 
