@@ -3,6 +3,8 @@
   connection: local
   become: true
   become_user: root
+  vars: 
+    tomcat_port: 8082
   
   tasks:
     - name: Deploy java war into Apache tomcat server
