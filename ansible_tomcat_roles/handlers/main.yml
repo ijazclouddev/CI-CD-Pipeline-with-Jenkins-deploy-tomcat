@@ -1,1 +1,7 @@
 # handlers file for ansible_tomcat_roles
+handlers:
+ - name: Stop tomcat services
+   shell: /usr/local/apache-tomcat-10.0.27/bin/shutdown.sh
+
+ - name: Start Tomcat
+   shell: nohup /usr/local/apache-tomcat-10.0.27/bin/startup.sh
