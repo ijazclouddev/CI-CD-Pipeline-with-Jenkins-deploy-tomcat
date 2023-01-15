@@ -41,6 +41,9 @@
        src: /var/lib/jenkins/workspace/FirstPipeline/server.xml.j2
        dest: /usr/local/apache-tomcat-10.0.27/conf/server.xml
        mode: '0777'
+       notify:
+         - Stop tomcat services
+         - Start Tomcat
        
    handlers:
     - name: Stop tomcat services
