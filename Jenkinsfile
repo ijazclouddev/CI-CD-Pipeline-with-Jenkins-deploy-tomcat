@@ -5,13 +5,13 @@ pipeline {
         jdk 'Java_Home' 
            }
     environment{
-      BRANCH_NAME = 'main'
-    }
+      def BRANCH_NAME ='GIT_BRANCH'
+  }
 stages {
       stage('GIT checkout') {
            steps {
                script{
-                if (env.BRANCH_NAME == 'main') {
+                   if (env.GIT_BRANCH.contains('main')) {
                 echo 'Hello from main branch'
                 git branch: 'main', url: 'https://github.com/ijazclouddev/CI-CD-Pipeline-with-Jenkins-deploy-tomcat'
                 }
