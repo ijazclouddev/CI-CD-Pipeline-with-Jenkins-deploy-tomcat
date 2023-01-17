@@ -4,9 +4,9 @@ pipeline {
         maven 'Maven_Home' 
         jdk 'Java_Home' 
            }
-#    environment{
-#      def branch ='GIT_BRANCH'
-#  }
+    environment{
+      def BRANCH_NAME ='GIT_BRANCH'
+  }
 
     }
 stages {
