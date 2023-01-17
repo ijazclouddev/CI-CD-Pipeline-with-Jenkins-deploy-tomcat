@@ -17,7 +17,9 @@ stages {
                 git branch: 'main', url: 'https://github.com/ijazclouddev/CI-CD-Pipeline-with-Jenkins-deploy-tomcat'
                 }
                else {
-            sh "echo 'Hello from ${env.BRANCH_NAME} branch!'"
+  //          sh "echo 'Hello from ${env.BRANCH_NAME} branch!'"
+  //              echo 'Hello from ${env.BRANCH_NAME} branch!
+                  echo "Run this stage only if the branch is not main"
                   git branch: 'dev', url: 'https://github.com/ijazclouddev/CI-CD-Pipeline-with-Jenkins-deploy-tomcat' 
                }
                }
