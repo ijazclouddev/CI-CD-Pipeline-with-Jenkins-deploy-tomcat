@@ -7,9 +7,16 @@ pipeline {
 stages {
       stage('GIT checkout') {
            steps {
-             
+               script{
+                if (env.BRANCH_NAME == 'main') {
+                echo 'Hello from main branch'
                 git branch: 'main', url: 'https://github.com/ijazclouddev/CI-CD-Pipeline-with-Jenkins-deploy-tomcat'
-             
+                }
+               else {
+            sh "echo 'Hello from ${env.BRANCH_NAME} branch!'"
+                  git branch: 'dev', url: 'https://github.com/ijazclouddev/CI-CD-Pipeline-with-Jenkins-deploy-tomcat' 
+               }
+               }
           }
         }
        stage('Compile') {
