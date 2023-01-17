@@ -4,11 +4,14 @@ pipeline {
         maven 'Maven_Home' 
         jdk 'Java_Home' 
            }
+    environment{
+        env.BRANCH_NAME == 'main
+    }
 stages {
       stage('GIT checkout') {
            steps {
                script{
-                if (env.BRANCH_NAME == 'main') {
+                if ($BRANCH_NAME == 'main') {
                 echo 'Hello from main branch'
                 git branch: 'main', url: 'https://github.com/ijazclouddev/CI-CD-Pipeline-with-Jenkins-deploy-tomcat'
                 }
