@@ -7,8 +7,9 @@ pipeline {
     environment{
 //      BRANCH_NAME = 'main'
 //        echo GIT_BRANCH %GIT_BRANCH%
-        BRANCH_NAME = "${GIT_BRANCH.split("/")[1]}"
-        echo $BRANCH_NAME
+//        BRANCH_NAME = "${GIT_BRANCH.split("/")[1]}"
+//        echo $BRANCH_NAME
+        echo 'Pulling... ' + env.GIT_BRANCH
 
     }
 stages {
