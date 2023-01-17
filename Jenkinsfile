@@ -5,7 +5,11 @@ pipeline {
         jdk 'Java_Home' 
            }
     environment{
-      BRANCH_NAME = 'main'
+//      BRANCH_NAME = 'main'
+//        echo GIT_BRANCH %GIT_BRANCH%
+        BRANCH_NAME = "${GIT_BRANCH.split("/")[1]}"
+        echo $BRANCH_NAME
+
     }
 stages {
       stage('GIT checkout') {
