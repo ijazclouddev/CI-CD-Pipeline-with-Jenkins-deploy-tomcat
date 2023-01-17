@@ -5,18 +5,7 @@ pipeline {
         jdk 'Java_Home' 
            }
     environment{
-//      BRANCH_NAME = 'main'
-//        echo GIT_BRANCH %GIT_BRANCH%
-//        BRANCH_NAME = "${GIT_BRANCH.split("/")[1]}"
-//        echo $BRANCH_NAME
- //       echo 'Pulling... ' + env.GIT_BRANCH
- //   FULL_PATH_BRANCH = "${sh(script:'git name-rev --name-only HEAD', returnStdout: true)}"
-  //  GIT_BRANCH = FULL_PATH_BRANCH.substring(FULL_PATH_BRANCH.lastIndexOf('/') + 1, FULL_PATH_BRANCH.length())
-        def branch_nem = scm.branches[0].name
-if (branch_nem.contains("*/")) {
-    branch_nem = branch_nem.split("\\*/")[1]
-    }
-echo branch_nem
+      def branch ='GIT_BRANCH'
   }
 
     }
