@@ -12,7 +12,7 @@ stages {
       stage('GIT checkout') {
            steps {
                script{
-                if (env.GIT_BRANCH.contains('main') {
+                if (env.GIT_BRANCH.contains('main')) {
                 echo 'Hello from main branch'
                 git branch: 'main', url: 'https://github.com/ijazclouddev/CI-CD-Pipeline-with-Jenkins-deploy-tomcat'
                 }
