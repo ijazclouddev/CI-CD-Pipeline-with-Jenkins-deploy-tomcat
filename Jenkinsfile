@@ -3,6 +3,7 @@ pipeline {
     tools { 
         maven 'Maven_Home' 
         jdk 'Java_Home' 
+        echo(env.BRANCH_NAME)
            }
 stages {
       stage('GIT checkout') {
