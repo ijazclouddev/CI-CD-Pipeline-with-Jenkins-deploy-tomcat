@@ -5,7 +5,7 @@ pipeline {
         jdk 'Java_Home' 
            }
     environment{
-        env.BRANCH_NAME == 'main
+        env.BRANCH_NAME == 'main'
     }
 stages {
       stage('GIT checkout') {
