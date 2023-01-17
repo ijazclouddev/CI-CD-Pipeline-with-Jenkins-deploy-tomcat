@@ -9,7 +9,10 @@ pipeline {
 //        echo GIT_BRANCH %GIT_BRANCH%
 //        BRANCH_NAME = "${GIT_BRANCH.split("/")[1]}"
 //        echo $BRANCH_NAME
-        echo 'Pulling... ' + env.GIT_BRANCH
+ //       echo 'Pulling... ' + env.GIT_BRANCH
+    FULL_PATH_BRANCH = "${sh(script:'git name-rev --name-only HEAD', returnStdout: true)}"
+    GIT_BRANCH = FULL_PATH_BRANCH.substring(FULL_PATH_BRANCH.lastIndexOf('/') + 1, FULL_PATH_BRANCH.length())
+  }
 
     }
 stages {
