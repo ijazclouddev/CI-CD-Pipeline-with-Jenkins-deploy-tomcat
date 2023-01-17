@@ -8,7 +8,6 @@ pipeline {
       def BRANCH_NAME ='GIT_BRANCH'
   }
 
-    }
 stages {
       stage('GIT checkout') {
            steps {
