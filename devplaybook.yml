@@ -25,8 +25,8 @@
        dest: "/tmp/hello-world-maven.war"
        mode: '0644'
 
-  #  - name: Execute the command in remote shell; stdout goes to the specified file on the remote
-  #    ansible.builtin.shell: amazon-linux-extras install java-openjdk11 -y
+    - name: Execute the command in remote shell; stdout goes to the specified file on the remote
+      ansible.builtin.shell: amazon-linux-extras install java-openjdk11 -y
 
     - name: download tomcat server packages
       get_url:
