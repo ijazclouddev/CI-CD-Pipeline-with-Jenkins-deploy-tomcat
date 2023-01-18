@@ -10,7 +10,7 @@
        artifact_id: hello-world-maven
        extension: war
        version: '{{ version }}' 
-       repository_url: "http://18.181.205.133:8081/repository/maven-test-repo/"
+       repository_url: "http://18.181.205.133:8081/repository/maven-releases/"
        username: "{{ username }}"
        password: "{{ password }}"
        dest: "/tmp/hello-world-maven.war"
