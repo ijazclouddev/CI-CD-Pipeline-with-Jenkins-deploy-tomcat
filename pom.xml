@@ -5,7 +5,7 @@
 
   <groupId>io.happycoding</groupId>
   <artifactId>hello-world-maven</artifactId>
-  <version>3.0-RELEASE</version>
+  <version>4.0-RELEASE</version>
   <packaging>war</packaging>
 
   <properties>
