@@ -65,11 +65,18 @@ stage('Execute Ansible Playbook') {
            steps {
                sh 'ls -ltrh'
                script{
+                   if (env.GIT_BRANCH.contains('main')) {
                def mavenPom = readMavenPom file: 'pom.xml'
                def version = "${mavenPom.version}"  
                echo "${version}"
                sh 'ls -ltrh'
                sh "ansible-playbook --vault-password-file=/var/lib/jenkins/workspace/.vault_pass -i inventory roleplaybook.yml -e version='${version}'"
+                   }
+                   else
+                   {
+                     echo "Run this stage only if the branch is not main"
+                      sh 'ansible-playbook -i inventory devplaybook.yml'
+                   }
             }
             }
         }
