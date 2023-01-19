@@ -75,7 +75,7 @@ stage('Execute Ansible Playbook') {
                    else
                    {
                      echo "Run this stage only if the branch is not main"
-                      sh 'ansible-playbook -i inventory devplaybook.yml'
+                      sh 'ansible-playbook -i devinv devplaybook.yml'
                    }
             }
             }
