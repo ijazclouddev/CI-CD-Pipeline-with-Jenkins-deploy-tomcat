@@ -36,6 +36,12 @@ stages {
     }
 }
 }
+    stage('Owasp Dependency Check') {
+           steps {
+               dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'DP-Check'
+            }
+        }
+
 stage('Build') {
            steps {
                sh 'mvn clean install'
