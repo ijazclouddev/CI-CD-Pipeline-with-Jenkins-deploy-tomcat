@@ -93,7 +93,8 @@ stage('Execute Ansible Playbook') {
     
 stage('OWASP DAST') {
            steps {
-               sh '''
+           //    sh '''
+               script{
                 docker pull owasp/zap2docker-stable
                 docker run -dt --name owasp owasp/zap2docker-stable sh
                 docker exec owasp mkdir /zap/wrk
@@ -102,7 +103,8 @@ stage('OWASP DAST') {
                 docker cp owasp:/zap/wrk/report.xml $WORKSPACE/report.xml
                 docker stop owasp && docker rm owasp
                 
-               '''
+          //     '''
+               }
             }
         }
 }
