@@ -105,6 +105,5 @@ stage('OWASP DAST') {
                '''
             }
         }
-    }
 }
 }
