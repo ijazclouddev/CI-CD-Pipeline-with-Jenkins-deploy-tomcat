@@ -38,9 +38,11 @@ stages {
 }
     stage('Owasp Dependency Check') {
            steps {
+               catchError{
     //           dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'DP-Check'
    //            dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'my-dpcheck'
                dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'my-dpcheck'
+               }
             }
         }
 
