@@ -29,13 +29,13 @@ stages {
                sh 'mvn clean test package'
             }
         }
-        stage('SonarQube Code Analysis') {
-        steps{
-        withSonarQubeEnv('sonarqube-8.9.10') { 
-        sh 'mvn sonar:sonar'
-    }
-}
-}
+ //       stage('SonarQube Code Analysis') {
+  //      steps{
+   //     withSonarQubeEnv('sonarqube-8.9.10') { 
+    //    sh 'mvn sonar:sonar'
+    //}
+//}
+//}
     stage('Owasp Dependency Check') {
            steps {
      //           dependencyCheck additionalArguments: '--format HTML', odcInstallation: 'DP-Check'
