@@ -20,7 +20,7 @@ spec:
           image: ijaz21/helloworldmaven_0.1
           imagePullPolicy: Always
           ports:
-            - containerPort: 8090
+            - containerPort: 8080
               name: http
               protocol: TCP
 
@@ -35,7 +35,7 @@ spec:
   ports:
     - name: http
       port: 80
-      targetPort: 8090
+      targetPort: 8080
   type: LoadBalancer
   selector:
     app: my-app
