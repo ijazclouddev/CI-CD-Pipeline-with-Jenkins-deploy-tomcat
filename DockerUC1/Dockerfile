@@ -6,4 +6,4 @@
 FROM node:alpine
 COPY ./ ./
 RUN npm install
-CMD ["npm","start"]
+CMD ["npm","index.js"]
