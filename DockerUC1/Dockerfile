@@ -1,0 +1,5 @@
+FROM node:19-alpine
+RUN mkdir node
+RUN npm install
+EXPOSE 8090
+CMD node server_init.js
