@@ -8,5 +8,5 @@ FROM node:latest
 WORKDIR /var/lib/jenkins/workspace/Dockerusecases/
 #COPY ["package.json","./"]
 COPY ./ ./
-#RUN npm install
+RUN npm install
 CMD ["npm","start"]
