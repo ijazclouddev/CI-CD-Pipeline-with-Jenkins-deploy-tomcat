@@ -3,7 +3,7 @@
 #RUN npm install
 #EXPOSE 8090
 #CMD node server_init.js
-FROM node:alpine
+FROM node:latest
 COPY ./ ./
 RUN npm install
 CMD ["npm","index.js"]
