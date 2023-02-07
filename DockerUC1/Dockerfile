@@ -4,8 +4,8 @@
 #EXPOSE 8090
 #CMD node server_init.js
 FROM node:latest
-#WORKDIR /app
-WORKDIR /var/lib/jenkins/workspace/Dockerusecases/
+WORKDIR /app
+#WORKDIR /var/lib/jenkins/workspace/Dockerusecases/
 #COPY ["package.json","./"]
 COPY ./ ./
 RUN npm install
