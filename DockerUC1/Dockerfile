@@ -4,5 +4,6 @@
 #EXPOSE 8090
 #CMD node server_init.js
 FROM node:alpine
+COPY ./ ./
 RUN npm install
 CMD ["npm","start"]
