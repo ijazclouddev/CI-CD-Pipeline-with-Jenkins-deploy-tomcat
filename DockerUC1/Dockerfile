@@ -4,6 +4,8 @@
 #EXPOSE 8090
 #CMD node server_init.js
 FROM node:latest
-COPY ./ ./
+WORKDIR /app
+COPY ["package.json","./"]
+#COPY ./ ./
 RUN npm install
-CMD ["npm","index.js"]
+CMD ["npm","start"]
