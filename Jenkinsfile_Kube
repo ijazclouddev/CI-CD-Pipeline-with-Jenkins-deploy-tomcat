@@ -1,0 +1,53 @@
+pipeline {
+    agent any
+    tools { 
+        maven 'Maven_Home' 
+        jdk 'Java_Home' 
+           }
+           stages {
+      stage('GIT checkout') {
+           steps {
+             
+                git branch: 'main', url: 'https://github.com/ijazclouddev/CI-CD-Pipeline-with-Jenkins-deploy-tomcat'
+             
+          }
+        }
+        stage('Compile') {
+           steps {
+               sh 'mvn clean test package'
+            }
+        }
+        
+        stage('Build') {
+           steps {
+               sh 'mvn clean install'
+            }
+        }
+        
+         stage('Docker Build'){
+            steps{
+                
+              sh "docker build . -t ijaz21/helloworldmaven_0.1"
+              
+            }
+        }
+        
+        stage('Push to dockerHub'){
+             steps{
+                 withCredentials([string(credentialsId: 'dockerpassword', variable: 'Dockerpassword')]) {
+                  sh "docker login -u ijaz21 -p ${Dockerpassword}"
+                 
+                 }
+                 
+                 sh "docker push ijaz21/helloworldmaven_0.1"
+             }
+         }
+         stage('Deploy to EKS'){
+          steps{
+              withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'kubernetespwd', namespace: '', restrictKubeConfigAccess: false, serverUrl: '') {
+    sh " kubectl apply -f eksdep-K8s.yaml "
+}
+          }   
+         }
+           }
+}
